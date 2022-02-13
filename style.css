@@ -1,0 +1,190 @@
+:root {
+  --border-color: rgb(255, 193, 203);
+  --background: #ffffff;
+  --front-bg: #c1d0e8;
+  --front-bg-darken: rgb(112, 177, 193);
+  --shadow: rgba(0, 0, 0, 0.01);
+  --drop-shadow: rgba(0, 0, 0, 0.5);
+  --text: #331717;
+}
+
+html,
+body {
+  overflow: hidden;
+  background-color: ##ffd3e1;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  position: relative;
+  width: 425px;
+  height: 300px;
+  border: 10px solid var(--border-color);
+  margin: 360px auto;
+  box-shadow: 0px 0px 5px 5px #00000050;
+  background-color: var(--background);
+}
+
+.card .textContainer {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  background: #fff;
+}
+
+.card .textContainer #header {
+  font-size: 1.5rem;
+  margin: 60px auto;
+}
+
+.card p {
+  font-family: 'Roboto';
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: var(--text);
+  font-style: italic;
+  text-align: center;
+  margin: 30px auto;
+}
+
+.card .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: -10px 0px 0px -10px;
+  border: 10px solid var(--border-color);
+  backface-visibility: hidden;
+  background-color: var(--front-bg);
+  background-size: contain;
+  transform-style: preserve-3d;
+  transform-origin: 50% 0%;
+  transform: perspective(800px) rotateX(0deg);
+  transition: all 0.8s ease-in-out;
+}
+
+.front_bg
+{
+	background: url("./17.jpg") no-repeat 50% 0%/cover;
+	width: 425px;
+	height: 300px;
+	position: absolute;
+}
+
+.card:hover .front {
+  transform: perspective(800px) rotateX(170deg);
+}
+
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 10px solid var(--border-color);
+  margin: -10px 0px 0px -10px;
+  backface-visibility: visible;
+  filter: drop-shadow(2px 2px 4px var(--drop-shadow));
+  transform-style: preserve-3d;
+  transform-origin: 50% 0%;
+  transform: perspective(800px) rotateX(0deg);
+  transition: all 0.8s ease-in-out;
+  background-color: var(--background);
+  box-shadow: 0 0 10px 10px var(--shadow);
+}
+
+.card:hover .back {
+  transform: perspective(800px) rotateX(170deg);
+  /*
+  box-shadow: 0px 5px 10px 0px var(--shadow), inset 2px 0px 15px 0px var(--shadow);
+  */
+
+}
+
+
+.heart-container {
+  position: relative;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+}
+
+.heart-1 {
+  position: absolute;
+  background-color: #ff0022;
+  filter: drop-shadow(0px 0px 5px var(--drop-shadow));
+  height: 50px;
+  width: 50px;
+  margin: 0 auto;
+  transform: rotate(-18deg) scale(.7);
+  top: -30px;
+  left: 92px;
+}
+.heart-1:before,
+.heart-1:after {
+  content: "";
+  position: absolute;
+  background-color: inherit;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+.heart-1:before{
+  top: -25px;
+}
+.heart-1:after {
+  left: 25px;;
+}
+
+.heart-2 {
+  position: absolute;
+  background-color: rgb(255, 0, 85);
+  filter: drop-shadow(0px 0px 5px var(--drop-shadow));
+  height: 30px;
+  width: 30px;
+  margin: 0 auto;
+  transform: rotate(-78deg);
+  top: 149px;
+  left: -113px;
+}
+.heart-2:before,
+.heart-2:after {
+  content: "";
+  position: absolute;
+  background-color: rgb(255, 0, 85);
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+.heart-2:before{
+  top: -15px;
+}
+.heart-2:after {
+  left: 15px;
+}
+
+.heart-3 {
+  position: absolute;
+  background-color: rgb(255, 60, 125);
+  filter: drop-shadow(0px 0px 5px var(--drop-shadow));
+  height: 20px;
+  width: 20px;
+  margin: 0 auto;
+  top: 117px;
+  left: 73px;
+  transform: rotateX(-11deg);
+
+}
+.heart-3:before,
+.heart-3:after {
+  content: "";
+  position: absolute;
+  background-color: rgb(255, 60, 125);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+}
+.heart-3:before{
+  top: -10px
+}
+.heart-3:after {
+  left: 10px;
+}
+
